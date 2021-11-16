@@ -16,7 +16,7 @@ p {
   right: 0;
   margin: 20px;
   padding: 10px;
-  border: grey;
+  border: 1px solid grey;
 }
 
 .highscores {
@@ -25,13 +25,17 @@ p {
   left: 0;
   margin: 20px;
   padding: 10px;
-  outline: grey;
+  border: 1px solid grey;
 }
 
-#start {
+.highscores:hover {
+  background-color: hotpink;
+  box-shadow: 5px 5px 15px 0 grey;
+}
+
+#startcontainer {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 50px;
-  border: 1px grey;
 }

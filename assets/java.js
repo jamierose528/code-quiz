@@ -1,6 +1,5 @@
 var timeEl = document.querySelector(".timer");
-
-
+var startButton = document.querySelector("#start")
 var secondsLeft = 60;
 
 function setTime() {
@@ -12,7 +11,6 @@ function setTime() {
     if(secondsLeft === 0) {
 
       clearInterval(timerInterval);
-
       sendMessage();
     }
 
