@@ -1,0 +1,21 @@
+open page
+    high score
+        opens window/page with previous high schore
+        local storage
+    timer
+        starts counting down when start button is pressed
+    score   
+        starts at zero and is added to everytime a question is answered correctly
+    start button   
+        replace body information with quiz
+            make quiz array
+                call out each question randomly
+            have four options and a correct answer
+                if user answer matches correct answer show Correct!
+                if user answer does not match correct answer, show Wrong! and deduct 10 seconds from timer
+                each correct(true?) answer will add a point to the score
+            replace each question with a new question
+            quiz is over when timer is up
+            if remainding score is higher than previous high score, then store and ask for name
+                "you have a new high score!"
+            

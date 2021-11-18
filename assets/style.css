@@ -39,3 +39,11 @@ p {
   align-items: center;
   height: 50px;
 }
+
+#questions {
+  display: none;
+}
+
+#answer {
+  display: none;
+}
