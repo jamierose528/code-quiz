@@ -1,7 +1,8 @@
 var timeEl = document.querySelector(".timer");
 var startButton = document.querySelector("#start");
-var questionEl = document.querySelector('#questions');
-var answerEl = document.querySelector('#answer');
+var questionEl = document.querySelector('#question');
+var answerEl = document.querySelector('#answers');
+var rightWrong = document.querySelector('#right-wrong');
 var secondsLeft = 60;
 var onGoing = false
 var content = document.querySelector("header")
@@ -10,48 +11,59 @@ var questions;
 // array of questions (5)
 var questionsArray = [
     {
-        Question: "0",
-        Options: ["a", "b", "c"],
-        Answer: 0
+        question: "what is color",
+        a: "blue",
+        b: "green",
+        c: "yellow",
+        answer: "c"
     }, 
     {
-        Question: "1",
-        Options: ["a", "b", "c"],
-        Answer: 0
+        question: "what is color",
+        a: "blue",
+        b: "green",
+        c: "yellow",
+        answer: "b"
     },
     {
-        Question: "2",
-        Options: ["a", "b", "c"],
-        Answer: 0
+        question: "what is color",
+        a: "blue",
+        b: "green",
+        c: "yellow",
+        answer: "a"
     },
     {
-        Question: "3",
-        Options: ["a", "b", "c"],
-        Answer: 0
+        question: "what is color",
+        a: "blue",
+        b: "green",
+        c: "yellow",
+        answer: "b"
     },
     {
-        Question: "4",
-        Options: ["a", "b", "c"],
-        Answer: 0
+        question: "what is color",
+        a: "blue",
+        b: "green",
+        c: "yellow",
+        answer: "c"
     }, 
     {
-        Question: "5",
-        Options: ["a", "b", "c"],
-        Answer: 0
+        question: "what is color",
+        a: "blue",
+        b: "green",
+        c: "yellow",
+        answer: "a"
     }
 ]
 
-startButton.addEventListener("click", startQuiz)
 
 function startQuiz () {
-    if(onGoing) {
-        return
-    }
+    // if(onGoing) {
+    //     return
+    // }
     questions = [...questionsArray]
     hideEl()
     setTime()
     var shown = getQuestion()
-    displayQuestion(shown.index, shown.shownQuestion)
+    displayQuestion(shown.index, shown.shownQuestionObject)
     showQuestionEl()
 }
 
@@ -95,10 +107,11 @@ onGoing = true
 
 // start button to start first question and get rid of content
 function hideEl() {
- content.style.opacity = "0"
+ content.style.display = 'none'
 }
 
 // each question to be right or else wrong
+
 
 // question to show up
 function showQuestionEl() {
@@ -108,30 +121,37 @@ function showQuestionEl() {
 function getQuestion() {
 var index = Math.floor(Math.random() * questions.length)
 
-var shownQuestion = questions[index]
+var shownQuestionObject = questions[index]
 return {
     index,
-    shownQuestion
+    shownQuestionObject
 }
 }
 
 function displayQuestion(index, questionObject) {
-var h1 = document.createElement('h1')
+console.log(index, questionObject)
+console.log(questionEl)
+questionEl.textContent = questionObject.question 
+questionEl.setAttribute("data-question", index)
+
+var buttonA = document.createElement('button')
+buttonA.textContent = questionObject.a
+buttonA.setAttribute("data-btnAnswer", "a")
+var buttonB = document.createElement('button')
+buttonB.textContent = questionObject.b
+buttonB.setAttribute("data-btnAnswer", "b")
+var buttonC = document.createElement('button')
+buttonC.textContent = questionObject.c
+buttonC.setAttribute("data-btnAnswer", "c")
+
+answerEl.append(buttonA)
+answerEl.append(buttonB)
+answerEl.append(buttonC)
 
 
-h1.textContent = questionObject.Question 
-h1.setAttribute("data-question", index)
-questionEl.appendChild(h1)
-for (let i = 0; i < questionObject.Options.length; i++) {
-    var displayOption = questionObject.Options[i]
-    var li = document.createElement('li')
-    li.textContent = displayOption
-    li.setAttribute("data-option", i)
-    questionEl.appendChild(li)
-}
 }
 
 
 // add points together
-
+startButton.addEventListener("click", startQuiz)
 // 

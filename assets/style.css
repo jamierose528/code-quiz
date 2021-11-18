@@ -47,3 +47,7 @@ p {
 #answer {
   display: none;
 }
+
+#right-wrong {
+  display: none;
+}
