@@ -159,15 +159,14 @@ answerEl.append(buttonC)
 // save to local storage
 // move on to next question
 
-qaWrapper.addEventListener("click", function(event){
-    if (event.target.matches("button"){
+// qaWrapper.addEventListener("click", function(event){
+//     if (event.target.matches("button"){
         
-    })
-    })
-}
+//     })
+//     })
+ }
 
 
 // add points together
 startButton.addEventListener("click", startQuiz)
 
-// 
