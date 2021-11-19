@@ -9,6 +9,10 @@ var content = document.querySelector("header")
 var qaWrapper = document.querySelector('#question-answer-wrapper')
 var questions;
 
+var highScoreName = localStorage.getItem("highScoreName");
+var highScore = localStorage.getItem("highScore");
+var currentScore = localStorage.getItem('currentScore');
+
 // array of questions (5)
 var questionsArray = [
     {
@@ -149,8 +153,7 @@ answerEl.append(buttonA)
 answerEl.append(buttonB)
 answerEl.append(buttonC)
 // if a button is clicked inside the wrapper, 
-// check the buttons data attribute var.dataset
-// check value of dataset to equal questionObject.answer
+
 // if does add points to points and local storage
 // check to see if there are any more questions/or if time is up(game over)
 // move on to next question
@@ -159,11 +162,14 @@ answerEl.append(buttonC)
 // save to local storage
 // move on to next question
 
-// qaWrapper.addEventListener("click", function(event){
-//     if (event.target.matches("button"){
+qaWrapper.addEventListener("click", function(event){
+    if (event.target.matches("button"){
+        // check the buttons data attribute var.dataset
+// check value of dataset to equal questionObject.answer
+        event===questionObject.answer;
         
-//     })
-//     })
+    })
+    })
  }
 
 
