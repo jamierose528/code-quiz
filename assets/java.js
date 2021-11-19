@@ -6,50 +6,51 @@ var rightWrong = document.querySelector('#right-wrong');
 var secondsLeft = 60;
 var onGoing = false
 var content = document.querySelector("header")
+var qaWrapper = document.querySelector('#question-answer-wrapper')
 var questions;
 
 // array of questions (5)
 var questionsArray = [
     {
-        question: "what is color",
-        a: "blue",
-        b: "green",
-        c: "yellow",
-        answer: "c"
+        question: "Inside which HTML element do we put the JavaScript?",
+        a: "<script>",
+        b: "<js>",
+        c: "<html>",
+        answer: "a"
     }, 
     {
-        question: "what is color",
-        a: "blue",
-        b: "green",
-        c: "yellow",
-        answer: "b"
-    },
-    {
-        question: "what is color",
-        a: "blue",
-        b: "green",
-        c: "yellow",
+        question: "How to write an IF statement in JavaScript?",
+        a: "if (i==5)",
+        b: "if i=5",
+        c: "if i==5 then",
         answer: "a"
     },
     {
-        question: "what is color",
-        a: "blue",
-        b: "green",
-        c: "yellow",
-        answer: "b"
+        question: "How does a FOR loop start?",
+        a: "for (i<=5; i++)",
+        b: "for i=1 to 5",
+        c: "yfor (i=0; i<=5; i++",
+        answer: "a"
     },
     {
-        question: "what is color",
-        a: "blue",
-        b: "green",
-        c: "yellow",
-        answer: "c"
+        question: "How do you declare a JavaScript variable?",
+        a: "var carName;",
+        b: "v carName;",
+        c: "variablee carName;",
+        answer: "a"
+    },
+    {
+        question: "Which operator is used to assign a value to a variable?",
+        a: "x",
+        b: "=",
+        c: "-",
+        answer: "a"
     }, 
     {
-        question: "what is color",
-        a: "blue",
-        b: "green",
-        c: "yellow",
+        question: "Is JavaScript case-senstive?",
+        a: "yes",
+        b: "no",
+        c: "depends",
         answer: "a"
     }
 ]
@@ -147,11 +148,26 @@ buttonC.setAttribute("data-btnAnswer", "c")
 answerEl.append(buttonA)
 answerEl.append(buttonB)
 answerEl.append(buttonC)
+// if a button is clicked inside the wrapper, 
+// check the buttons data attribute var.dataset
+// check value of dataset to equal questionObject.answer
+// if does add points to points and local storage
+// check to see if there are any more questions/or if time is up(game over)
+// move on to next question
+// if wrong, minus 10 seconds from timer
+// display "wrong"
+// save to local storage
+// move on to next question
 
-
+qaWrapper.addEventListener("click", function(event){
+    if (event.target.matches("button"){
+        
+    })
+    })
 }
 
 
 // add points together
 startButton.addEventListener("click", startQuiz)
+
 // 
