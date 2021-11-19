@@ -177,9 +177,14 @@ qaWrapper.addEventListener("click", function(event){
         // if does add points to points and local storage
         // localStorage.setItem('currentScore', score)}
     }
+    removeQuestion(index)
+    getQuestion()
  })
 }
 
+function removeQuestion(index) {
+    questions.splice(index, 1)
+}
 // add points together
 
 startButton.addEventListener("click", startQuiz)

@@ -52,6 +52,9 @@ p {
   display: none;
 }
 
+#question-answer-wrapper {
+}
+
 #answers {
   display: flex;
   justify-content: center;
