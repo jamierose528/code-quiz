@@ -8,6 +8,7 @@ var onGoing = false
 var content = document.querySelector("header")
 var qaWrapper = document.querySelector('#question-answer-wrapper')
 var questions;
+var incorrectAnswer = 10
 
 var highScoreName = localStorage.getItem("highScoreName");
 var highScore = localStorage.getItem("highScore");
@@ -48,7 +49,7 @@ var questionsArray = [
         a: "x",
         b: "=",
         c: "-",
-        answer: "a"
+        answer: "b"
     }, 
     {
         question: "Is JavaScript case-senstive?",
@@ -154,7 +155,6 @@ answerEl.append(buttonB)
 answerEl.append(buttonC)
 // if a button is clicked inside the wrapper, 
 
-// if does add points to points and local storage
 // check to see if there are any more questions/or if time is up(game over)
 // move on to next question
 // if wrong, minus 10 seconds from timer
@@ -163,16 +163,24 @@ answerEl.append(buttonC)
 // move on to next question
 
 qaWrapper.addEventListener("click", function(event){
-    if (event.target.matches("button"){
-        // check the buttons data attribute var.dataset
-// check value of dataset to equal questionObject.answer
-        event===questionObject.answer;
-        
-    })
-    })
- }
-
+    if (event.target.matches("button")){
+        console.log(event.target.dataset.btnanswer)
+    if (event.target.dataset.btnanswer === questionObject.answer) {
+        // answer = correct
+        console.log("correct")
+    } else {
+        // answer = incorrect
+        console.log('no')
+    }
+       
+     
+        // if does add points to points and local storage
+        // localStorage.setItem('currentScore', score)}
+    }
+ })
+}
 
 // add points together
+
 startButton.addEventListener("click", startQuiz)
 
